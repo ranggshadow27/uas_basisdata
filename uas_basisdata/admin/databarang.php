@@ -65,6 +65,7 @@ $printa = mysqli_query($conn, $databarang);
                     <div class="exportnav">
                         <a class="exportbutton" href="export/printpdfbarang.php" target="_blank">Export to <span style="color:#e41d1d">PDF</span></a>
                         <a class="exportbutton" href="export/printxlsbarang.php" target="_blank">Export to <span style="color:green">EXCEL</span></a>
+                        <a class="exportbutton" href="log/log_databarang.php">History</a>
                     </div>
                 </div>
             </div>
