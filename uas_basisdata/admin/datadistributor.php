@@ -50,7 +50,7 @@ $printc = mysqli_query($conn, $datadistributor);
                         <td><?= $c['nama_distributor'];?></td>
                         <td>
                             <a class="edit" href="update/updatepage_distributor.php?id=<?php echo $c['id_distributor']; ?>">EDIT</a> | 
-                            <a class="delete" href="delete.php?id=<?php echo $c['id_distributor']; ?>">DELETE</a>
+                            <a class="delete" href="delete/deletedistributor.php?id=<?php echo $c['id_distributor']; ?>">DELETE</a>
                         </td>
                     </tr>
                 <?php endwhile;?>

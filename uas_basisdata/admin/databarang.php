@@ -3,7 +3,7 @@ include "../koneksi.php";
 include "session_check.php";
 
 //query menampilkan data
-$databarang = "SELECT * FROM `data_barang` ORDER BY `data_barang`.`nama_barang` ASC";
+$databarang = "SELECT * FROM `data_barang` ORDER BY `data_barang`.`id_barang` ASC";
 $printa = mysqli_query($conn, $databarang);
 
 ?>
@@ -23,7 +23,7 @@ $printa = mysqli_query($conn, $databarang);
             <a href="databarang.php" class="active">Data Barang</a>
             <a href="datapembeli.php">Data Pembeli</a>
             <a href="datadistributor.php">Data Distributor</a>
-            <a href="pembelianbarang.php">Data Pembelian Barang</a>
+            <a href="datapembelianbarang.php">Data Pembelian Barang</a>
             <a href="detailbarang.php">Detail Barang</a>
         </nav>
             <div id="databarang">
@@ -38,7 +38,8 @@ $printa = mysqli_query($conn, $databarang);
                 </header>
                 <div class="main">
                     <table>
-                        <tr>
+                        <tr>   
+                            <th>Id</th>
                             <th>Nama Barang</th>
                             <th>id_Detail Barang</th>
                             <th>id_Distributor</th>
@@ -48,6 +49,7 @@ $printa = mysqli_query($conn, $databarang);
                         </tr>
                 <?php while($a = mysqli_fetch_array($printa)): ?>
                         <tr>
+                            <td><?= $a['id_barang'];?></td>
                             <td><?= $a['nama_barang'];?></td>
                             <td><?= $a['id_detail_barang'];?></td>
                             <td><?= $a['id_distributor'];?></td>
@@ -55,7 +57,7 @@ $printa = mysqli_query($conn, $databarang);
                             <td><?= $a['stok_barang'];?></td>
                             <td>
                                 <a class="edit" href="update/updatepage.php?id=<?php echo $a['id_barang']; ?>">EDIT</a> | 
-                                <a class="delete" href="delete.php?id=<?php echo $a['id_barang']; ?>">DELETE</a>
+                                <a class="delete" href="delete/deletebarang.php?id=<?php echo $a['id_barang']; ?>">DELETE</a>
                             </td>
                         </tr>
                 <?php endwhile;?>

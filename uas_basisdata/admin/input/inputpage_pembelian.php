@@ -19,8 +19,8 @@
     ?>
 </head>
 <body>
-    <div class="container">
-        <a class="back" href="../datamaster.php">KEMBALI</a>
+    <div class="containers">
+        <a class="back" href="../datapembelianbarang.php">KEMBALI</a>
         <h3>Tambah Pembelian Barang</h3>
         <hr>
         <div class="main">

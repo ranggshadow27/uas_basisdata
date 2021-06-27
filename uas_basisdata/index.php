@@ -1,13 +1,17 @@
 <html>
+
 <head>
-	<title>Login page</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Login page</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
+
 <body>
-	<br/>
-	<br/>
-	<center><h2>LOGIN PAGE</h2></center>	
-	<br/>
+    <br />
+    <br />
+    <center>
+        <h2>LOGIN PAGE</h2>
+    </center>
+    <br />
     <?php 
 	if(isset($_GET['pesan'])){
 		if($_GET['pesan'] == "gagal"){
@@ -21,22 +25,23 @@
 		}
 	}
 	?>
-	<div class="login">
-	<br/>
-		<form action="session.php" method="post">
-			<div class="area">
-				<label>Username:</label>
-				<input type="text" name="username" id="username" placeholder="Masukkan username"/>
-			</div>
-			<div class="area">
-				<label>Password:</label>
-				<input type="password" name="password" id="password" placeholder="Masukkan password"/>
-			</div>			
-			<div>
-				<input type="submit" value="Sign In" id="tombol">
-			</div>
-			<span class="text">Dont have an account? </span> <a class="link" href="registration.php">Sign Up</a>
-		</form>
-	</div>
+    <div class="login">
+        <br />
+        <form action="session.php" method="post">
+            <div class="area">
+                <label>Username:</label>
+                <input type="text" name="username" id="username" placeholder="Masukkan username" />
+            </div>
+            <div class="area">
+                <label>Password:</label>
+                <input type="password" name="password" id="password" placeholder="Masukkan password" />
+            </div>
+            <div>
+                <input type="submit" value="Sign In" id="tombol">
+            </div>
+            <span class="text">Dont have an account? </span> <a class="link" href="registration.php">Sign Up</a>
+        </form>
+    </div>
 </body>
+
 </html>

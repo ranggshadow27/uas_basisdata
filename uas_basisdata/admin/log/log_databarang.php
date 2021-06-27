@@ -18,7 +18,7 @@ $printa = mysqli_query($conn, $databarang);
     <link rel="stylesheet" href="../../css/style.css" type="text/css">
 </head>
 <body>
-    <div class="containers">
+    <div class="container">
             <div id="databarang">
             <a class="back" href="../databarang.php">KEMBALI</a>
                 <header>
@@ -52,7 +52,7 @@ $printa = mysqli_query($conn, $databarang);
                             <td><?= $a['stok_lama'];?></td>
                             <td><?= $a['stok_baru'];?></td>
                             <td>
-                                <a class="delete" href="delete.php?id=<?php echo $a['id_logbarang']; ?>">DELETE</a>
+                                <a class="delete" href="deletelogbarang.php?id=<?php echo $a['id_logbarang']; ?>">DELETE</a>
                             </td>
                         </tr>
                 <?php endwhile;?>

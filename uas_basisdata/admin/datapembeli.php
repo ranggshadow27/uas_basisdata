@@ -3,7 +3,7 @@ include "../koneksi.php";
 include "session_check.php";
 
 //query menampilkan data
-$datapembeli = "SELECT * FROM `data_pembeli` ORDER BY `data_pembeli`.`nama_pembeli` ASC";
+$datapembeli = "SELECT * FROM `data_pembeli` ORDER BY `data_pembeli`.`id_pembeli` ASC";
 
 $printb = mysqli_query($conn, $datapembeli);
 
@@ -40,6 +40,7 @@ $printb = mysqli_query($conn, $datapembeli);
             <div class="main">
                 <table>
                     <tr>
+                        <th>Id</th>
                         <th>Nama Pembeli</th>
                         <th>Tanggal Pembelian</th>
                         <th>id_Barang</th>
@@ -49,6 +50,7 @@ $printb = mysqli_query($conn, $datapembeli);
                     </tr>
                 <?php while($b = mysqli_fetch_array($printb)): ?>
                     <tr>
+                        <td><?= $b['id_pembeli'];?></td>
                         <td><?= $b['nama_pembeli'];?></td>
                         <td><?= $b['tgl_transaksi_pembelian'];?></td>
                         <td><?= $b['id_barang'];?></td>
@@ -56,7 +58,7 @@ $printb = mysqli_query($conn, $datapembeli);
                         <td>Rp. <?= $b['jumlah_uang_kembali'];?></td>
                         <td>
                             <a class="edit" href="update/updatepage_pembeli.php?id=<?php echo $b['id_pembeli']; ?>">EDIT</a> | 
-                            <a class="delete" href="delete.php?id=<?php echo $b['id_pembeli']; ?>">DELETE</a>
+                            <a class="delete" href="delete/deletepembeli.php?id=<?php echo $b['id_pembeli']; ?>">DELETE</a>
                         </td>
                     </tr>
                 <?php endwhile;?>

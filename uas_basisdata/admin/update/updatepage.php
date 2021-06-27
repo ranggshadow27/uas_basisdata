@@ -23,8 +23,8 @@
 	?>
 </head>
 <body>
-	<div class="container">
-    <a class="back" href="../datamaster.php">KEMBALI</a>
+	<div class="containers">
+    <a class="back" href="../databarang.php">KEMBALI</a>
     <h3>EDIT DATA BARANG</h3>
     <hr>
     	<form method="post" action="update.php">
@@ -51,14 +51,14 @@
             </div>
             <div class="input">
                 <label>Harga Barang</label>
-                <input type="text" name="harga_barang" value="<?php echo $d['harga_barang']; ?>">
+                <input type="text" class="inputtext" name="harga_barang" value="<?php echo $d['harga_barang']; ?>">
             </div>
             <div class="input">
                 <label>Stok</label>
                 <input type="text" name="stok_barang" value="<?php echo $d['stok_barang']; ?>">
             </div>
             <div class="submit">
-                <input type="submit" name="submit" value="Update">
+                <input type="submit" class="submit" name="submit" value="Update">
             </div>
 		</form>
 		<?php 

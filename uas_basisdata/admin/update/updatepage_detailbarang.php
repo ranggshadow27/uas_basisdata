@@ -18,8 +18,8 @@
 	?>
 </head>
 <body>
-	<div class="container">
-    <a class="back" href="../datamaster.php">KEMBALI</a>
+	<div class="containers">
+    <a class="back" href="../detailbarang.php">KEMBALI</a>
     <h3>EDIT DETAIL BARANG</h3>
     <hr>
     	<form method="post" action="update.php">

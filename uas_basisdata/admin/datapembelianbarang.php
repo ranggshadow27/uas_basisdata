@@ -54,7 +54,7 @@ $printb = mysqli_query($conn, $datapembelian);
                         <td>Rp. <?= $b['total_transaksi'];?></td>
                         <td>
                             <a class="edit" href="update/updatepage_pembelian.php?id=<?php echo $b['id_pembelian_barang']; ?>">EDIT</a> | 
-                            <a class="delete" href="delete.php?id=<?php echo $b['id_pembelian_barang']; ?>">DELETE</a>
+                            <a class="delete" href="delete/deletepembelian.php?id=<?php echo $b['id_pembelian_barang']; ?>">DELETE</a>
                         </td>
                     </tr>
                 <?php endwhile;?>

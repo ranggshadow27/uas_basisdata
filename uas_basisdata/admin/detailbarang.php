@@ -52,7 +52,7 @@ $printc = mysqli_query($conn, $detailbarang);
                         <td><?= $c['keterangan_barang'];?></td>
                         <td>
                             <a class="edit" href="update/updatepage_detailbarang.php?id=<?php echo $c['id_detail_barang']; ?>">EDIT</a> | 
-                            <a class="delete" href="delete.php?id=<?php echo $c['id_detail_barang']; ?>">DELETE</a>
+                            <a class="delete" href="delete/deletedetailbarang.php?id=<?php echo $c['id_detail_barang']; ?>">DELETE</a>
                         </td>
                     </tr>
                 <?php endwhile;?>
