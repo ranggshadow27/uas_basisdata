@@ -1,6 +1,6 @@
 <?php
-include "../../koneksi.php";
-include "../session_check.php";
+include "../../../koneksi.php";
+include "../../session_check.php";
 
 //query menampilkan data
 $databarang = "SELECT * FROM `log_databarang` ORDER BY `log_databarang`.`id_logbarang` ASC";
@@ -14,23 +14,34 @@ $printa = mysqli_query($conn, $databarang);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log Data Barang</title>
-    <link rel="stylesheet" href="../../css/style.css" type="text/css">
+    <title>Export XLS</title>
+    <style type="text/css">
+	body{
+		font-family: sans-serif;
+	}
+	table{
+		margin: 20px auto;
+		border-collapse: collapse;
+	}
+	table th,
+	table td{
+		border: 1px solid #3c3c3c;
+		padding: 3px 8px;
+ 
+	}
+	</style>
 </head>
 <body>
-    <div class="container">
-            <div id="databarang">
-            <a class="back" href="../databarang.php">KEMBALI</a>
-                <header>
-                    <h3>DATA BARANG</h3>
-                    <h4>User Active :
-                        <span class="user_login">
-                            <?php echo $_SESSION['username']; ?>
-                        </span>|
-                        <a class="back" href="../../logout.php">LOGOUT</a>
-                    </h4>
-                </header>
-                <div class="main">
+    <?php
+	header("Content-type: application/vnd-ms-excel");
+	header("Content-Disposition: attachment; filename=Log_Data_Barang.xls");
+	?>
+    <div class="containers">
+        <div id="databarang">
+        <header>
+            <center><h2>LOG DATA BARANG</h2></center>
+        </header>
+            <div class="main">
                     <table>
                         <tr>
                             <th>id Log</th>
@@ -40,7 +51,6 @@ $printa = mysqli_query($conn, $databarang);
                             <th>Harga (Baru)</th>
                             <th>Stok (Lama)</th>
                             <th>Stok (Baru)</th>
-                            <th>Action</th>
                         </tr>
                 <?php while($a = mysqli_fetch_array($printa)): ?>
                         <tr>
@@ -51,20 +61,14 @@ $printa = mysqli_query($conn, $databarang);
                             <td>Rp. <?= $a['harga_baru'];?></td>
                             <td><?= $a['stok_lama'];?></td>
                             <td><?= $a['stok_baru'];?></td>
-                            <td>
-                                <a class="delete" href="deletelogbarang.php?id=<?php echo $a['id_logbarang']; ?>">DELETE</a>
-                            </td>
                         </tr>
                 <?php endwhile;?>
                     </table>
-                    <br><hr><br>
-                    <div class="exportnav">
-                        <a class="exportbutton" href="../export/log/printpdflogbarang.php" target="_blank">Export to <span style="color:#e41d1d">PDF</span></a>
-                        <a class="exportbutton" href="../export/log/printxlslogbarang.php" target="_blank">Export to <span style="color:green">EXCEL</span></a>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
+    <script>
+        window.print();
+    </script>
 </body>
 </html>
