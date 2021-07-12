@@ -40,6 +40,7 @@ $printa = mysqli_query($conn, $databarang);
                             <th>Harga (Baru)</th>
                             <th>Stok (Lama)</th>
                             <th>Stok (Baru)</th>
+                            <th>Waktu</th>
                             <th>Action</th>
                         </tr>
                 <?php while($a = mysqli_fetch_array($printa)): ?>
@@ -51,6 +52,7 @@ $printa = mysqli_query($conn, $databarang);
                             <td>Rp. <?= $a['harga_baru'];?></td>
                             <td><?= $a['stok_lama'];?></td>
                             <td><?= $a['stok_baru'];?></td>
+                            <td><?= $a['waktu_perubahan'];?></td>
                             <td>
                                 <a class="delete" href="deletelogbarang.php?id=<?php echo $a['id_logbarang']; ?>">DELETE</a>
                             </td>
