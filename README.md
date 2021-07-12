@@ -2,4 +2,4 @@
 
 Rangga Tito Prayogo - 311910036
 
-          Video Presentasi : otw..
+          Video Presentasi : uploading...
